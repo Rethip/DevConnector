@@ -1,11 +1,8 @@
 const express= require('express');
 const router = express.Router ();
 
-router.get('/test',(req,res) => res.json({msg:'users api works'}));
-module.exports = router;
-
 //load user model
-//const user = require ('../../models/user');
+//const user = require ('../../models/User');
 
 // @route post api/users/register
 //@desc register now
@@ -13,4 +10,4 @@ module.exports = router;
 //router
 
 
-//module.exports = router
+module.exports = router;

@@ -27,13 +27,7 @@ mongoose
 
 
 
-
-
-// body parser api middleware
-//app.use(bodyparser.urlencoded({extended:false}))
-//app.use(bodyparser.json());
-//Connect to db
-//mongoose.connect(db)
-         //.then(() => console.log('mong db conneected'))
-         //.catch(err => console.log(err));
+//body parser api middleware
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json());
 
