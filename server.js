@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const profile = require('./routes/api/profile');
 const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
+const bodyparser = require('body-parser');
+const passport =require('passport');
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json());
 
 
 app.get('/',(req,res)=>res.send("hello world "));
@@ -15,7 +19,7 @@ app.get('/',(req,res)=>res.send("hello world "));
 const port = process.env.port || 5200;
 app.listen(port,() => console.log(`server running on port ${port}`));
 
-//const bodyparser = require('body-parser');
+
 
 const db = require('./config/keys').mongoURI;
 
@@ -25,9 +29,11 @@ mongoose
  .then(()=> console.log('mdb connected'))
  .catch(err => console.log(err));
 
+//passport middleware
+//app.use(passport.initialize());
+//passport config
+//require('./config/passport')(passport);
 
 
-//body parser api middleware
-app.use(bodyparser.urlencoded({extended:false}))
-app.use(bodyparser.json());
+
 
